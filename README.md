@@ -31,6 +31,8 @@ Install the dependencies using:
 pip install -r requirements.txt
 ```
 
+Run the pipeline
+```
 python main.py \
     --inference_path "path_to_inference" \
     --pairs_path "MicroLens-100k_pairs.csv" \
@@ -48,3 +50,4 @@ python main.py \
     --include_frames \
     --include_comments \
     --n_list 10 20 50
+```
