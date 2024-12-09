@@ -1,0 +1,10 @@
+numpy==1.26.4
+pandas==2.2.3
+huggingface-hub==0.26.1
+openai==1.55.0
+requests==2.31.0
+transformers==4.46.0
+scikit-learn==1.5.2
+tqdm==4.66.1
+matplotlib==3.5.2
+scipy==1.11.4
