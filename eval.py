@@ -33,5 +33,30 @@ class Evaluation:
         hit_rate = self.data.hit_rate(user_ids, recommendations[:N])
         return hit_rate
 
-    def get_improvement():
-        pass
+    def get_improvement(
+        self,
+        baseline_dict: Dict[int, List[int]],
+        new_dict: Dict[int, List[int]],
+        N_list: List[int],
+    ) -> Dict[int, float]:
+        baseline_hit_rates = {}
+
+        new_hit_rates = {}
+
+        # Calculate hit rates for each N
+        for N in N_list:
+            baseline_hit_rates[N] = self.calculate_hit_rate(baseline_dict, N)
+            new_hit_rates[N] = self.calculate_hit_rate(new_dict, N)
+
+        # Calculate improvement
+        improvement = {}
+        for N in N_list:
+            baseline_hr = baseline_hit_rates.get(N, 0)
+            new_hr = new_hit_rates.get(N, 0)
+
+            if baseline_hr == 0:
+                improvement[N] = float("inf")  # Avoid division by zero
+            else:
+                improvement[N] = ((new_hr - baseline_hr) / baseline_hr) * 100
+
+        return improvement
