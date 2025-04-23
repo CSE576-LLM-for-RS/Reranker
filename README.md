@@ -19,6 +19,38 @@ This project explores the integration of state-of-the-art Large Language Models 
 
 ---
 
+![Pipeline Overview](Pipelines.jpg)
+
+---
+
+## Experimental Results
+
+The following tables summarize key experimental results on the MicroLens-100k dataset, demonstrating the impact of advanced LLM-based re-ranking on two strong baselines. Only the most representative and impactful results are shown.
+
+**Table 1: NFM Baseline and LLM Re-Ranking Performance**
+
+| Model Type         | Model Variant                   | Hits@10 | Hits@20 | % Change (Hits@20) |
+|--------------------|---------------------------------|---------|---------|-------------------|
+| IDRec RS (NFM)     | NFM (ours)                      |   195   |   289   |      +0.0%        |
+| Discriminative LLM | e5-small-v2                     |   178   |   289   |      +0.0%        |
+| Discriminative LLM | all-MiniLM-L6-v2                |   176   |   289   |      +0.0%        |
+| Generative LLM     | Meta-Llama-3-8B-Instruct (init) |   161   |   243   |     -15.92%       |
+| Generative LLM     | GPT-4o mini (refined prompt)    |   184   |   280   |      -3.11%       |
+
+**Table 2: VIDRec DSSM Baseline and LLM Re-Ranking Performance**
+
+| Model Type         | Model Variant                   | Hits@10 | Hits@20 | % Change (Hits@20) |
+|--------------------|---------------------------------|---------|---------|-------------------|
+| VIDRec RS (DSSM)   | VIDRec DSSM (ours)              |    78   |   148   |      +0.0%        |
+| Discriminative LLM | all-distilroberta-v1            |    93   |   148   |      +0.0%        |
+| Discriminative LLM | text-embedding-3-small          |    85   |   148   |      +0.0%        |
+| Generative LLM     | Meta-Llama-3-8B-Instruct (init) |    77   |   122   |     -17.57%       |
+| Generative LLM     | GPT-4o mini (refined prompt)    |   119   |   140   |     -5.41%        |
+
+These results show that while discriminative LLMs can match the baseline on top-N hit rates, generative LLMs with current prompting strategies may still lag behind. However, the pipeline is flexible for future improvements as LLM technology advances.
+
+---
+
 # Recommendation System CLI Tool
 
 This repository provides a CLI tool to evaluate and improve recommendation system performance using generative and discriminative models. The tool supports dynamic model selection, parameter configuration, and calculates hit rate improvements for different values of N.
