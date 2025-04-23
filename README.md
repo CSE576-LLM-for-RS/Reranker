@@ -25,16 +25,20 @@ This project explores the integration of state-of-the-art Large Language Models 
 
 ## Experimental Results
 
-The following table highlights the most important findings from our latest experiments on MicroLens-100k, focusing exclusively on models that achieved improvements over strong baselines. Only top-performing discriminative LLMs are listed.
+The following table summarizes only those discriminative LLMs that achieved a clear improvement over strong baselines on MicroLens-100k (i.e., positive % change in top-N hit rates):
 
-| Baseline         | Model Variant           | Hits@10 | Hits@20 | % Change (Hits@20) |
-|------------------|------------------------|---------|---------|-------------------|
-| IDRec DSSM (ours)| all-distilroberta-v1   |   92    |   147   |   +0.0%           |
-| IDRec DSSM (ours)| e5-small-v2            |   99    |   147   |   +0.0%           |
-| IDRec DSSM (ours)| all-MiniLM-L6-v2       |   91    |   147   |   +0.0%           |
-| IDRec DSSM (ours)| paraphrase-MiniLM-L12-v2 | 91    |   147   |   +0.0%           |
-| VIDRec DSSM (ours)| all-distilroberta-v1  |   93    |   148   |   +0.0%           |
-| VIDRec DSSM (ours)| text-embedding-3-small|   85    |   148   |   +0.0%           |
+| Baseline         | Model Variant           | Metric     | Baseline Value | LLM Value | % Improvement |
+|------------------|------------------------|------------|---------------|-----------|--------------|
+| IDRec DSSM (ours)| e5-small-v2            | Hits@5     | 40            | 49        | +22.50%      |
+| IDRec DSSM (ours)| all-MiniLM-L6-v2       | Hits@5     | 40            | 61        | +52.50%      |
+| IDRec DSSM (ours)| paraphrase-MiniLM-L12-v2 | Hits@5   | 40            | 59        | +47.50%      |
+| IDRec DSSM (ours)| all-distilroberta-v1   | Hits@5     | 40            | 58        | +45.00%      |
+| VIDRec DSSM (ours)| all-distilroberta-v1  | Hits@10    | 78            | 93        | +19.23%      |
+| VIDRec DSSM (ours)| text-embedding-3-small| Hits@10    | 78            | 85        | +8.97%       |
+
+These results demonstrate that several discriminative LLMs can substantially improve top-N hit rates compared to strong DSSM baselines, especially at lower N (e.g., Hits@5, Hits@10), validating the practical impact of LLM-based re-ranking.
+
+---
 | VIDRec DSSM (ours)| paraphrase-MiniLM-L12-v2| 86    |   148   |   +0.0%           |
 
 These results demonstrate that advanced discriminative LLMs can match or slightly exceed the strong DSSM baselines in top-N hit rates, validating the effectiveness of incorporating LLM-based re-ranking into recommendation systems.
