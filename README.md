@@ -28,21 +28,21 @@ This project explores the integration of state-of-the-art Large Language Models 
 
 As shown in the table below, several discriminative LLMs and GPT-4o mini (a generative LLM) provide substantial improvements over strong DSSM baselines on key top-N hit rate metrics. These results demonstrate the effectiveness and flexibility of our LLM-powered re-ranking pipeline, showcasing its potential for advancing recommendation system performance with state-of-the-art language models.
 
-| Baseline             | Model Variant                | Metric     | Baseline Value | Model Value | % Improvement |
-|----------------------|-----------------------------|------------|---------------|-------------|--------------|
-| IDRec DSSM (ours)    | e5-small-v2                  | Hits@5     | 40            | 49          | +22.50%      |
-| IDRec DSSM (ours)    | all-MiniLM-L6-v2             | Hits@5     | 40            | 61          | +52.50%      |
-| IDRec DSSM (ours)    | paraphrase-MiniLM-L12-v2     | Hits@5     | 40            | 49          | +22.50%      |
-| IDRec DSSM (ours)    | all-distilroberta-v1         | Hits@5     | 40            | 59          | +47.50%      |
-| IDRec DSSM (ours)    | GPT-4o mini (refined prompt) | Hits@5     | 40            | 58          | +45.00%      |
-| VIDRec DSSM (ours)   | all-MiniLM-L6-v2             | Hits@5     | 42            | 44          | +4.76%       |
-| VIDRec DSSM (ours)   | paraphrase-MiniLM-L12-v2     | Hits@5     | 42            | 45          | +7.14%       |
-| VIDRec DSSM (ours)   | all-distilroberta-v1         | Hits@5     | 42            | 53          | +26.19%      |
-| VIDRec DSSM (ours)   | text-embedding-3-small       | Hits@5     | 42            | 51          | +21.43%      |
-| VIDRec DSSM (ours)   | all-distilroberta-v1         | Hits@10    | 78            | 93          | +19.23%      |
-| VIDRec DSSM (ours)   | text-embedding-3-small       | Hits@10    | 78            | 85          | +8.97%       |
-| VIDRec DSSM (ours)   | paraphrase-MiniLM-L12-v2     | Hits@10    | 78            | 86          | +10.26%      |
-| VIDRec DSSM (ours)   | GPT-4o mini (refined prompt) | Hits@5     | 42            | 47          | +11.90%      |
+| Baseline         | Model Variant                | Metric     | Baseline Value | Model Value | % Improvement |
+|------------------|-----------------------------|------------|---------------|-------------|--------------|
+| IDRec DSSM       | e5-small-v2                  | Hits@5     | 40            | 49          | +22.50%      |
+|                  | all-MiniLM-L6-v2             | Hits@5     | 40            | 61          | +52.50%      |
+|                  | paraphrase-MiniLM-L12-v2     | Hits@5     | 40            | 49          | +22.50%      |
+|                  | all-distilroberta-v1         | Hits@5     | 40            | 59          | +47.50%      |
+|                  | GPT-4o mini (refined prompt) | Hits@5     | 40            | 58          | +45.00%      |
+| VIDRec DSSM      | all-MiniLM-L6-v2             | Hits@5     | 42            | 44          | +4.76%       |
+|                  | paraphrase-MiniLM-L12-v2     | Hits@5     | 42            | 45          | +7.14%       |
+|                  | all-distilroberta-v1         | Hits@5     | 42            | 53          | +26.19%      |
+|                  | text-embedding-3-small       | Hits@5     | 42            | 51          | +21.43%      |
+|                  | all-distilroberta-v1         | Hits@10    | 78            | 93          | +19.23%      |
+|                  | text-embedding-3-small       | Hits@10    | 78            | 85          | +8.97%       |
+|                  | paraphrase-MiniLM-L12-v2     | Hits@10    | 78            | 86          | +10.26%      |
+|                  | GPT-4o mini (refined prompt) | Hits@5     | 42            | 47          | +11.90%      |
 
 
 ---
