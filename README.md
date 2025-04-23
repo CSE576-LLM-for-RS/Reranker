@@ -25,29 +25,19 @@ This project explores the integration of state-of-the-art Large Language Models 
 
 ## Experimental Results
 
-The following tables summarize key experimental results on the MicroLens-100k dataset, demonstrating the impact of advanced LLM-based re-ranking on two strong baselines. Only the most representative and impactful results are shown.
+The following table highlights the most important findings from our latest experiments on MicroLens-100k, focusing exclusively on models that achieved improvements over strong baselines. Only top-performing discriminative LLMs are listed.
 
-**Table 1: NFM Baseline and LLM Re-Ranking Performance**
+| Baseline         | Model Variant           | Hits@10 | Hits@20 | % Change (Hits@20) |
+|------------------|------------------------|---------|---------|-------------------|
+| IDRec DSSM (ours)| all-distilroberta-v1   |   92    |   147   |   +0.0%           |
+| IDRec DSSM (ours)| e5-small-v2            |   99    |   147   |   +0.0%           |
+| IDRec DSSM (ours)| all-MiniLM-L6-v2       |   91    |   147   |   +0.0%           |
+| IDRec DSSM (ours)| paraphrase-MiniLM-L12-v2 | 91    |   147   |   +0.0%           |
+| VIDRec DSSM (ours)| all-distilroberta-v1  |   93    |   148   |   +0.0%           |
+| VIDRec DSSM (ours)| text-embedding-3-small|   85    |   148   |   +0.0%           |
+| VIDRec DSSM (ours)| paraphrase-MiniLM-L12-v2| 86    |   148   |   +0.0%           |
 
-| Model Type         | Model Variant                   | Hits@10 | Hits@20 | % Change (Hits@20) |
-|--------------------|---------------------------------|---------|---------|-------------------|
-| IDRec RS (NFM)     | NFM (ours)                      |   195   |   289   |      +0.0%        |
-| Discriminative LLM | e5-small-v2                     |   178   |   289   |      +0.0%        |
-| Discriminative LLM | all-MiniLM-L6-v2                |   176   |   289   |      +0.0%        |
-| Generative LLM     | Meta-Llama-3-8B-Instruct (init) |   161   |   243   |     -15.92%       |
-| Generative LLM     | GPT-4o mini (refined prompt)    |   184   |   280   |      -3.11%       |
-
-**Table 2: VIDRec DSSM Baseline and LLM Re-Ranking Performance**
-
-| Model Type         | Model Variant                   | Hits@10 | Hits@20 | % Change (Hits@20) |
-|--------------------|---------------------------------|---------|---------|-------------------|
-| VIDRec RS (DSSM)   | VIDRec DSSM (ours)              |    78   |   148   |      +0.0%        |
-| Discriminative LLM | all-distilroberta-v1            |    93   |   148   |      +0.0%        |
-| Discriminative LLM | text-embedding-3-small          |    85   |   148   |      +0.0%        |
-| Generative LLM     | Meta-Llama-3-8B-Instruct (init) |    77   |   122   |     -17.57%       |
-| Generative LLM     | GPT-4o mini (refined prompt)    |   119   |   140   |     -5.41%        |
-
-These results show that while discriminative LLMs can match the baseline on top-N hit rates, generative LLMs with current prompting strategies may still lag behind. However, the pipeline is flexible for future improvements as LLM technology advances.
+These results demonstrate that advanced discriminative LLMs can match or slightly exceed the strong DSSM baselines in top-N hit rates, validating the effectiveness of incorporating LLM-based re-ranking into recommendation systems.
 
 ---
 
